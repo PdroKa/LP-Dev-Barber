@@ -1,0 +1,82 @@
+@layer headerLayout {
+    header {
+        width: 100%;
+    }
+
+    .header-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    i {
+        color: var(--white);
+        transition: .5s;
+    }
+
+    .nav-brands {
+        display: flex;
+        gap: 16px;
+    }
+
+    .nav-brands a:hover i {
+        color: var(--red-light);
+        animation: translateY .7s infinite alternate;
+    }
+    @keyframes translateY {
+        from {
+            transform: translateY(0) scale(1);
+        }
+    
+        to {
+            transform: translateY(-8px) scale(1);
+        }
+    }
+
+    .header-button {
+        border: 1px solid var(--white);
+        padding: 8px 16px;
+        border-radius: 4px;
+        color: var(--white);
+        background-color: transparent;
+        transition: background-color .5s;
+    }
+
+    .header-button:hover {
+        border: 1px solid var(--red-light);
+        background-color: var(--red-light);
+    }
+
+    .header-logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 16px;
+    }
+
+    @media screen and (max-width:768px) {
+        .header-content{
+            width: 100%;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .header-content i{
+            margin-top: 16px;
+            font-size: 32px;
+        }
+
+        .header-logo img{
+            width: 160px;
+            margin-top: 40px;
+        }
+
+        .header-button{
+            display: none;
+        }
+    }
+}
+
+
+
+

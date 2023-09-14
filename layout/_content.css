@@ -1,0 +1,273 @@
+    @layer heroSection {
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-inline: 16px;
+        }
+
+        .bg-home {
+            position: relative;
+        }
+
+        .bg-home::before {
+            content: "";
+            display: block;
+            position: absolute;
+            background-image: linear-gradient(to bottom, rgba(6, 18, 30, .1), var(--primary-normal)), url('../assets/bg.svg');
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background-position: 50% 0;
+            background-size: cover;
+            background-repeat: no-repeat;
+            opacity: .8;
+        }
+
+        .hero {
+            color: var(white);
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 14px;
+        }
+
+        .hero h1 {
+            text-align: center;
+            line-height: 150%;
+            max-width: 932px;
+            font-size: 46px;
+        }
+
+        .hero p {
+            text-align: center;
+            margin: 14px 0;
+        }
+
+        .hero .title-decoration {
+            color: var(--primary-normal);
+            background-color: var(--white);
+        }
+
+        .button-contact {
+            padding: 14px 28px;
+            color: var(--white);
+            background-color: var(--red-normal);
+            border: 0;
+            border-radius: 4px;
+            font-size: 18px;
+            font-weight: 600;
+            margin: 14px 0;
+        }
+
+        .button-contact:hover {
+            animation: scaleButton .7s alternate infinite;
+        }
+
+        @keyframes scaleButton {
+            from {
+                transform: scale(1);
+            }
+
+            to {
+                transform: scale(1.07);
+            }
+        }
+    }
+
+
+    .about {
+        background: linear-gradient(180deg, rgba(6, 18, 30) 75%, rgba(255, 255, 255, .8));
+        overflow: hidden;
+        color: var(--white);
+
+    }
+
+    .about-content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 14px;
+    }
+
+
+    .about-content img {
+        max-width: 570px;
+        padding: 32px 16px;
+    }
+
+    .about-content div {
+        flex: 1;
+    }
+
+    .about-description h2 {
+        font-size: 32px;
+        margin-bottom: 24px;
+
+    }
+
+    .about-description p {
+        margin-bottom: 14px;
+        line-height: 150%;
+        font-size: 18px;
+    }
+
+
+
+    .column-white-center {
+        background: var(--white);
+        color: var(--dark-normal);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 32px 64px;
+        gap: 32px;
+    }
+
+    .services-content h2 {
+        text-align: center;
+        font-size: 32px;
+        margin-bottom: 16px;
+    }
+
+    .services-content p {
+        line-height: 150%;
+        text-align: center;
+        max-width: 788px;
+    }
+
+    .haircuts {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 16px;
+        width: 100%;
+    }
+
+    .haircut {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        background: var(--white);
+        box-shadow: 4px 4px 16px rgb(0, 0, 0, .5);
+        overflow: hidden;
+        border-radius: 8px;
+    }
+
+    .haircut img {
+        transition: .5s;
+    }
+
+    .haircut img:hover {
+        z-index: 1;
+        transform: scale(1.3) translate(5%, 10%);
+    }
+
+    .haircut-info {
+        background-color: var(--white);
+        z-index: 2;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 16px;
+    }
+
+    .haircut-info button {
+        background-color: var(--red-normal);
+        color: var(--white);
+        border-radius: 8px;
+        font-size: 14px;
+        text-align: center;
+        padding: 8px 16px;
+        border: 0;
+        transition: .5s;
+    }
+
+    .haircut-info button:hover {
+        background-color: var(--red-dark);
+    }
+
+    footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 32px 0;
+        gap: 16px;
+        color: var(--white);
+    }
+
+    .btn-whatsApp{
+        position: fixed;
+        bottom: 16px;
+        right: 32px;
+        z-index: 999;
+    }
+    .btn-whatsApp img{
+        max-width: 70px;
+        transition: .4;
+    }
+    .btn-whatsApp img:hover{
+        transform: scale(1.2);
+    }
+
+    .btn-whatsApp .tooltip{
+        visibility: hidden;
+        position: absolute;
+        width: 120px;
+        top:8px;
+        left: -132px;
+        background-color: var(--dark-normal);
+        color: var(--white);
+        border-radius: 8px;
+        padding: 8px;
+        text-align: center;
+        opacity: 0;
+        transition: opacity .7s;
+}
+    .btn-whatsApp:hover .tooltip{
+        visibility: visible;
+        opacity: 1;
+    }
+
+
+    @media screen and (max-width:768px) {
+        .hero {
+            min-height: 60vh;
+        }
+
+        .hero h1 {
+            font-size: 32px;
+            padding: 0 14px;
+            width: 100%;
+        }
+
+        .hero p {
+            font: 14px;
+        }
+
+        .about-content {
+            flex-direction: column;
+        }
+
+        .haircuts {
+            flex-direction: column;
+        }
+
+        .btn-whatsApp:hover img{
+            max-width: 64px;
+        }
+
+    }
+
+    @media screen and (max-width:480px) {
+        .hero h1 {
+            font-size: 24px;
+        }
+    }
